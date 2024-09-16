@@ -12,8 +12,5 @@ COPY . /app
 # Instala as dependências do projeto na imagem
 RUN npm install
 
-# Exponha a porta usada pelo expo para o host (tem que usar a flag -p no DOCKER RUN)
-EXPOSE 19000
-
 # Define o comando padrão que o container terá
 CMD ["npx", "expo", "start", "-w"]
