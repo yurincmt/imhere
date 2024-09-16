@@ -4,6 +4,6 @@
 
     cd imhere
 
-    docker build -f nodeLTS.Dockerfile -t imhere .
+    docker build -t imhere .
 
-    docker run --rm -p 19000:19000 -it imhere
+    docker run --rm -it imhere
