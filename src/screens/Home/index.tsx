@@ -26,7 +26,7 @@ export function Home() {
             placeholderTextColor="#6B6B6B"
           />
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.button} onPress={handleParticipantAdd}>
             <Text style={styles.buttonText}>
               +
@@ -34,9 +34,9 @@ export function Home() {
           </TouchableOpacity>
         </View>
 
-        <Participant/>
-        <Participant/>
-        <Participant/>
+        <Participant name = "Yuri Nascimento"/>
+        <Participant name = "Allan Alves"/>
+        <Participant name = "Alzenir Nascimento"/>
         
       </View>
     )
