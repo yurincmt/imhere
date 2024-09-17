@@ -12,10 +12,11 @@ WORKDIR /app
 # copia os arquivos do projeto imhere para a imagem
 COPY . /app
 
-RUN mv .bashrc /root/
+COPY .bashrc /root/
 
 # instala as dependências do projeto imhere
 RUN npm install
 
 # retorna o bash quando é criado um container com 'docker run'
-CMD ["sh", "-c" "sleep", "infinity"]
+# para rodar o container em background, passe o comando 'sleep inf' para o docker run
+CMD ["bash"]
