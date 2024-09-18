@@ -1,6 +1,6 @@
 import "@expo/metro-runtime";
 
-import { View, ScrollView, Text, TextInput, TouchableOpacity } from "react-native"
+import { View, Text, TextInput, TouchableOpacity, FlatList } from "react-native"
 
 import { styles } from "./styles"
 import { Participant } from "../components/Participant";
@@ -8,6 +8,7 @@ import { Participant } from "../components/Participant";
 export function Home() {
 
   const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'João'];
+  // const participants = [];
 
   function handleParticipantAdd () {
     console.log("Você clicou no botão adicionar!");
@@ -28,6 +29,7 @@ export function Home() {
           Sexta, 4 de Novembro de 2022.
         </Text>
 
+        
         <View style={styles.form}>
           <TextInput
             style={styles.input}
@@ -43,17 +45,23 @@ export function Home() {
           </TouchableOpacity>
         </View>
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-          {
-            participants.map(participant => (
+          <FlatList
+            data={participants}
+            keyExtractor={(item) => item}
+            renderItem={({item}) => (
               <Participant
-                key={participant}
-                name={participant}
-                onRemove={() => handleParticipantRemove("yuri")}
+                key={item}
+                name={item}
+                onRemove={() => handleParticipantRemove(item)}
               />
-            ))
-          }
-        </ScrollView>
+            )}
+            showsVerticalScrollIndicator={false}
+            ListEmptyComponent={() => (
+              <Text style={styles.listEmpytText}>
+                Ninguém chegou no evento ainda? Adicione participantes à sua lista de presença.
+              </Text>
+            )}
+          />
       </View>
     )
 }
