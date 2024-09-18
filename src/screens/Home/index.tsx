@@ -1,21 +1,32 @@
 import "@expo/metro-runtime";
 
-import { View, Text, TextInput, TouchableOpacity, FlatList } from "react-native"
+import { View, Alert, Text, TextInput, TouchableOpacity, FlatList } from "react-native"
 
 import { styles } from "./styles"
 import { Participant } from "../components/Participant";
 
 export function Home() {
 
-  const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'João'];
+  const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'João', 'Yuri'];
   // const participants = [];
 
   function handleParticipantAdd () {
-    console.log("Você clicou no botão adicionar!");
+    if(participants.includes("Yuri")) {
+      return Alert.alert("Participante Existente", "Esse participante já está na lista")
+    }
   }
 
   function handleParticipantRemove (name: string) {
-    console.log(`Você clicou em remover o participandte ${name}`)
+    Alert.alert("Remover Participante", `Remover o participante ${name}?`, [
+      {
+        text: 'Sim',
+        onPress: () => Alert.alert("Deletado!")
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+    ])
   }
 
   
