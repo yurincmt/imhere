@@ -1,11 +1,13 @@
 import "@expo/metro-runtime";
 
-import { View, Text, TextInput, TouchableOpacity } from "react-native"
+import { View, ScrollView, Text, TextInput, TouchableOpacity } from "react-native"
 
 import { styles } from "./styles"
 import { Participant } from "../components/Participant";
 
 export function Home() {
+
+  const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'João'];
 
   function handleParticipantAdd () {
     console.log("Você clicou no botão adicionar!");
@@ -14,6 +16,7 @@ export function Home() {
   function handleParticipantRemove (name: string) {
     console.log(`Você clicou em remover o participandte ${name}`)
   }
+
   
     return (
       <View style={styles.container}>
@@ -40,7 +43,17 @@ export function Home() {
           </TouchableOpacity>
         </View>
 
-        <Participant name = "Yuri Nascimento" onRemove={() => handleParticipantRemove("Yuri")}/>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {
+            participants.map(participant => (
+              <Participant
+                key={participant}
+                name={participant}
+                onRemove={() => handleParticipantRemove("yuri")}
+              />
+            ))
+          }
+        </ScrollView>
       </View>
     )
 }
