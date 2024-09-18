@@ -6,12 +6,17 @@ RUN apk update && apk upgrade && apk add \
     bash-completion \
     git
 
+
+# Clona o repo dentro da imagem; dessa forma, sempre que for executado um
+# 'docker buid' a imagem criada estará com o repo atualizado.
+# Porém sempre dê um 'git pull' dentro do container para manter as coisas
+# atuaizadas 
+RUN git clone https://github.com/yurincmt/imhere.git -b yuri.develop
+
 # Definie o diretório de trabalho no container (cria o diretório caso não exista)
-WORKDIR /app
+WORKDIR /imhere
 
-# copia os arquivos do projeto imhere para a imagem
-COPY . /app
-
+# minhas configs do bash para manter o PS1 colorido e ativr o bash-completion
 COPY .bashrc /root/
 
 # instala as dependências do projeto imhere
