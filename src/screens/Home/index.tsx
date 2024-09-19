@@ -1,21 +1,24 @@
 // import "@expo/metro-runtime";
 import { useState } from "react";
 
-import { View, Alert, Text, TextInput, TouchableOpacity, FlatList } from "react-native"
+import { View, Alert, Text, TextInput, TouchableOpacity, FlatList } from "react-native";
 
-import { styles } from "./styles"
+import { styles } from "./styles";
 import { Participant } from "../components/Participant";
 
 export function Home() {
 
-  const [participants, setParticipants] = useState(['Allana']);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState<string>('');
 
   function handleParticipantAdd () {
-    if(participants.includes("Yuri")) {
-      return Alert.alert("Participante Existente", "Esse participante já está na lista")
+
+    if (participants.includes(participantName)) {
+      return Alert.alert("Participante Existente", "Esse participante já está na lista");
     }
 
-    setParticipants((prevParticipants) => [...prevParticipants, 'Yuri'])
+    setParticipants((prevParticipants) => [...prevParticipants, participantName]);
+    setParticipantName('');
   }
 
   function handleParticipantRemove (name: string) {
@@ -48,6 +51,8 @@ export function Home() {
             style={styles.input}
             placeholder="Nome do participante"
             placeholderTextColor="#6B6B6B"
+            onChangeText={textInput => setParticipantName(textInput)}
+            defaultValue={participantName}
           />
 
           <TouchableOpacity
