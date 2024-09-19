@@ -1,4 +1,4 @@
-// import "@expo/metro-runtime";
+// import "@expo/metro-runtime"; // Ativa o Fast Refresh no navegador
 import { useState } from "react";
 
 import { View, Alert, Text, TextInput, TouchableOpacity, FlatList } from "react-native";
@@ -13,9 +13,7 @@ export function Home() {
 
   function handleParticipantAdd () {
 
-    if (participantName.length == 0) {
-      return;
-    }
+    if (participantName.length == 0) return;
 
     if (participants.includes(participantName)) {
       return Alert.alert("Participante Existente", "Esse participante já está na lista");
@@ -42,11 +40,11 @@ export function Home() {
     return (
       <View style={styles.container}>
         <Text style={styles.eventName}>
-          Nome do Evento
+          Tekkno Party
         </Text>
   
         <Text style={styles.eventDate}>
-          Sexta, 4 de Novembro de 2022.
+          Sexta, 13 de Novembro de 2024.
         </Text>
 
         
@@ -80,7 +78,7 @@ export function Home() {
             showsVerticalScrollIndicator={false}
             ListEmptyComponent={() => (
               <Text style={styles.listEmpytText}>
-                Ninguém chegou no evento ainda? Adicione participantes à sua lista de presença.
+                Ninguém inscrito no evento ainda. Adicione participantes à lista de inscritos.
               </Text>
             )}
           />
