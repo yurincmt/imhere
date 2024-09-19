@@ -1,4 +1,5 @@
-import "@expo/metro-runtime";
+// import "@expo/metro-runtime";
+import { useState } from "react";
 
 import { View, Alert, Text, TextInput, TouchableOpacity, FlatList } from "react-native"
 
@@ -7,13 +8,14 @@ import { Participant } from "../components/Participant";
 
 export function Home() {
 
-  const participants = ['Rodrigo', 'Vini', 'Diego', 'Biro', 'Ana', 'Isa', 'Jack', 'Mayk', 'João', 'Yuri'];
-  // const participants = [];
+  const [participants, setParticipants] = useState(['Allana']);
 
   function handleParticipantAdd () {
     if(participants.includes("Yuri")) {
       return Alert.alert("Participante Existente", "Esse participante já está na lista")
     }
+
+    setParticipants((prevParticipants) => [...prevParticipants, 'Yuri'])
   }
 
   function handleParticipantRemove (name: string) {
