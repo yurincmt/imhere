@@ -13,6 +13,10 @@ export function Home() {
 
   function handleParticipantAdd () {
 
+    if (participantName.length == 0) {
+      return;
+    }
+
     if (participants.includes(participantName)) {
       return Alert.alert("Participante Existente", "Esse participante já está na lista");
     }
