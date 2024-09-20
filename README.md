@@ -1,6 +1,28 @@
-## Para rodar o projeto no host e com emulador Android (Recomendado)
+# Gerenciador de Inscrições para Eventos
 
-### Instale o Nodejs LTS 'v20.17.0' na máquina
+O presente repositório contém o código-fonte de uma aplicação mobile simples desenvolvida em React Native com Expo (Managed Workflow), cujo objetivo é gerenciar a lista de participantes inscritos para um evento. A interface da aplicação é intuitiva e permite que os usuários adicionem e removam participantes da lista de forma dinâmica.
+
+
+## Funcionalidades
+
+ - **Adicionar participantes**: Insira o nome de um participante no campo de texto e pressione o botão de adição (+) para incluí-lo na lista de inscritos.
+
+ - **Remover participantes**: Cada participante da lista tem um botão de remoção (-). Ao clicar nele, uma confirmação será exibida para garantir que a remoção seja intencional.
+
+ - **Lista dinâmica de participantes**: A lista é atualizada em tempo real conforme novos participantes são adicionados ou removidos.
+
+
+## Tecnologias Utilizadas
+ - **React Native**: Utilizado para o desenvolvimento da interface mobile.
+ - **Expo (Managed Workflow)**: Framework que facilita o desenvolvimento e a execução de aplicações React Native.
+
+
+## Aplicação em Ação!
+
+
+## Rodar o Projeto no Host e com Emulador Android (Recomendado)
+
+### Instale o Nodejs LTS 'v20.17.0' na Máquina
 
 Especificamente a versão 'v20.17.0', pois foi usando ela que o app foi desenvolvido e testado!
 
@@ -11,7 +33,7 @@ Especificamente a versão 'v20.17.0', pois foi usando ela que o app foi desenvol
     apt install npm ; npm install -g n ; n install v20.17.0
 
 
-### Prepare o ambiente para desenvolvimento Android
+### Prepare o Ambiente para Desenvolvimento Android
 
 Siga as recomentações do React Native para o preparo do ambiente para desenvolvimento Android 
 
@@ -21,7 +43,7 @@ Siga as recomentações do React Native para o preparo do ambiente para desenvol
  - Building a React Native app with native code requires the `Android 14 (UpsideDownCake) SDK` in particular. 
 
 
-### Baixe o repositório do projeto na máquina e vá para seu diretório
+### Baixe o Repositório do Projeto na Máquina e vá para seu Diretório
     
     git clone -b yuri.develop https://github.com/yurincmt/imhere.git ; cd imhere
 
@@ -42,8 +64,7 @@ Se tiver tudo ok, rode a aplicação com o comando a seguir e espere ser carrega
     npx expo start -a
 
 
-
-## Para rodar o projeto em container e vizualizar na web
+## Rodar o Projeto em Container e Vizualizar na Web
 
 Rodar uma aplicação mobile em navegador tem suas limitações, visto que nem todas as funcionalidades do mobile será visível no navegador.
 
