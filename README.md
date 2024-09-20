@@ -19,6 +19,8 @@ O presente repositório contém o código-fonte de uma aplicação mobile simple
 
 ## Aplicação em Ação!
 
+https://github.com/user-attachments/assets/2be56a3d-94d9-4cb9-8a13-a5844ce2654d
+
 
 ## Rodar o Projeto no Host e com Emulador Android (Recomendado)
 
